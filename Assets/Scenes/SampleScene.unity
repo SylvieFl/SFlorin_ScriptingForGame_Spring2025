@@ -1085,7 +1085,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startingPosition: {x: -1.5, y: 2.7, z: 9.28}
   moveDirection: {x: 1, y: 0, z: 1}
-  speed: 5
+  speed: 6
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

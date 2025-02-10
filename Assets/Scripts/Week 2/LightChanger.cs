@@ -26,7 +26,7 @@ public class LightChanger : MonoBehaviour
         //AdjustLight(); //The code in this function will be called at the start of each update before moving on to the rest of the code in Update().
         Debug.Log("LightObject has been Asjusted");
 
-        if (Input.GetKeyDown(KeyCode.F))
+        if (Input.GetKeyDown(KeyCode.R))
         {
             ChangeLightColor(Color.red);
         }
@@ -48,7 +48,7 @@ public class LightChanger : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.V))
         {
-            lightWeWantToChange.gameObject.SetActive(true);
+            lightWeWantToChange.gameObject.SetActive(true);  
         }
     }
 
@@ -62,6 +62,41 @@ public class LightChanger : MonoBehaviour
     public void ChangeLightColor(Color santaClaus) 
     {
         lightWeWantToChange.color = santaClaus;
+
+        if (lightWeWantToChange.color == Color.green)
+        {
+            lightWeWantToChange.intensity = 100f;
+        }
+
+        else if (lightWeWantToChange.color == Color.red)
+        {
+            lightWeWantToChange.transform.position += Vector3.right * 3;
+        }
+
+        else if (lightWeWantToChange.color == Color.blue)
+        {
+            lightWeWantToChange.gameObject.SetActive(false);
+        }
+
+        else //no of the conditions above were met. So, do this if the color is anything other than green, red, or blue.
+        {
+            lightWeWantToChange.transform.position = Vector3.zero;  
+        }
+
+        if (lightWeWantToChange.color == Color.green || lightWeWantToChange.color == Color.red)
+        { 
+            //if the color is green OR red, the code will run. 
+        }
+
+        if (lightWeWantToChange.color == Color.blue && lightWeWantToChange.intensity > 50f)
+        { 
+            //if the color is blue AND the intensity of the light is greater than 50, the code will run.
+        }
+
+        if (lightWeWantToChange.color == Color.white || (lightWeWantToChange.color == Color.black && lightWeWantToChange.intensity <= 25f))
+        { 
+            //if the color is white OR the color is black and the intensity is less than or equal to 25, it will run this code.
+        }
     }
 
     private void OnEnable()

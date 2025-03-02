@@ -7,31 +7,23 @@ public class TimerBobomb : MonoBehaviour
 
     public TextMeshProUGUI timerText;
 
-    public RandomSpawnBobomb randomSpawnBobomb;
+    public BobombManager bobombManager;
 
     public bool stopCounter = false;
-
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        
-    }
 
     // Update is called once per frame
     void Update()
     {
-        if (randomSpawnBobomb.spawnCount == randomSpawnBobomb.randSpawnAmount)
+        if (timerDuration >= 0f)
         {
-            if (timerDuration >= 0f)
-            {
-                timerDuration -= Time.deltaTime;
-                timerText.text = Mathf.RoundToInt(timerDuration).ToString();
-            }
+            timerDuration -= Time.deltaTime;
+            timerText.text = Mathf.RoundToInt(timerDuration).ToString();
         }
-        
+
         if (timerDuration <= 0f) 
         { 
             stopCounter = true;
+            bobombManager.EndBobombCount();
         }
         
     }

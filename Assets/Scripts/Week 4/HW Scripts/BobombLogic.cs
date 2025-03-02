@@ -12,13 +12,13 @@ public class BobombLogic : MonoBehaviour
 
     public float boolTimer;
 
-    public RandomSpawnBobomb randSpawnBobomb;
+    public BobombManager bobombManager;
     public TimerBobomb timerBobomb;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        randSpawnBobomb = FindAnyObjectByType<RandomSpawnBobomb>();
+        bobombManager = FindAnyObjectByType<BobombManager>();
         timerBobomb = FindAnyObjectByType<TimerBobomb>();
         position1 = transform.position;
         boolTimer = Random.Range(3, 7);
@@ -28,7 +28,7 @@ public class BobombLogic : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (randSpawnBobomb.spawnCount == randSpawnBobomb.randSpawnAmount && firstMoveBobomb == true && timerBobomb.stopCounter == false) 
+        if (firstMoveBobomb == true && timerBobomb.stopCounter == false) 
         {
             MoveBobomb();
         }
@@ -44,8 +44,8 @@ public class BobombLogic : MonoBehaviour
 
         if (position2Set == false) 
         {
-            position2 = new Vector3(Random.Range(randSpawnBobomb.minX, randSpawnBobomb.maxX), 0.32f, Random.Range(randSpawnBobomb.minZ, randSpawnBobomb.maxZ));
-            randSpeed = Random.Range(1, 5);
+            position2 = new Vector3(Random.Range(bobombManager.minX, bobombManager.maxX), 0.32f, Random.Range(bobombManager.minZ, bobombManager.maxZ));
+            randSpeed = Random.Range(1, 4);
             position2Set = true;
         }
         
@@ -55,15 +55,15 @@ public class BobombLogic : MonoBehaviour
         direction = position2 - position1;
 
         direction = direction.normalized;
-        Debug.Log("direction " + direction);
+        //Debug.Log("direction " + direction);
 
-        Debug.Log(Vector3.Distance(position1, position2));
+        //Debug.Log(Vector3.Distance(position1, position2));
 
         if (Vector3.Distance(position1, position2) < 0.1f)
         {
             this.transform.position = position2;
             position1 = this.transform.position;
-            Debug.Log("set position");
+            //Debug.Log("set position");
             Position2Bool();
         }
         else
@@ -83,7 +83,7 @@ public class BobombLogic : MonoBehaviour
             if (boolTimer <= 0)
             {
                 position2Set = false;
-                boolTimer = Random.Range(4, 10);
+                boolTimer = Random.Range(5, 11);
             }
         }
     }

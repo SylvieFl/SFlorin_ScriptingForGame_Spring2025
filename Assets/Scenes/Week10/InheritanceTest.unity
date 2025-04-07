@@ -663,7 +663,7 @@ GameObject:
   - component: {fileID: 876401497}
   - component: {fileID: 876401496}
   - component: {fileID: 876401501}
-  m_Layer: 3
+  m_Layer: 2
   m_Name: VisionCone
   m_TagString: VisionCone
   m_Icon: {fileID: 0}
@@ -1622,7 +1622,7 @@ GameObject:
   - component: {fileID: 1218887112}
   - component: {fileID: 1218887111}
   - component: {fileID: 1218887110}
-  m_Layer: 3
+  m_Layer: 2
   m_Name: Face
   m_TagString: Untagged
   m_Icon: {fileID: 0}

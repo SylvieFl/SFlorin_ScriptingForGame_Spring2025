@@ -30,4 +30,20 @@ public class Player : MonoBehaviour
     { 
         //Death Animation
     }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.tag == "VisionCone")
+        {
+            other.GetComponentInParent<Enemy>().SeePlayer();
+        }
+    }
+
+    /*private void OnTriggerStay(Collider other)
+    {
+        if (other.tag == "VisionCone")
+        {
+            other.GetComponentInParent<Enemy>().SeePlayer();
+        }
+    }*/
 }

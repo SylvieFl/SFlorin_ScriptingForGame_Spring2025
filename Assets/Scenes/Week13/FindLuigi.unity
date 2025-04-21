@@ -1649,8 +1649,8 @@ MonoBehaviour:
   winScreen: {fileID: 288081143}
   misclicksText: {fileID: 975698424}
   audioSource: {fileID: 1518253276}
-  wrongClickSFX: {fileID: 0}
-  correctClickSFX: {fileID: 8300000, guid: 47420f362dc31fe4daa299ce046a8398, type: 3}
+  wrongClickSFX: {fileID: 8300000, guid: 25c0aee60f07bb74082398825f9f4e1a, type: 3}
+  correctClickSFX: {fileID: 8300000, guid: 4b98e27172048884aaceed918d0e5b42, type: 3}
 --- !u!82 &1518253276
 AudioSource:
   m_ObjectHideFlags: 0

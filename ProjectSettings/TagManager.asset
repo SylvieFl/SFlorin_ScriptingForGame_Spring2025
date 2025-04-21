@@ -14,6 +14,9 @@ TagManager:
   - Key
   - Door
   - VisionCone
+  - HorizWall
+  - VertWall
+  - Psyduck
   layers:
   - Default
   - TransparentFX
